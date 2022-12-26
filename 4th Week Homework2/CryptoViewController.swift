@@ -7,26 +7,66 @@
 
 import UIKit
 
+
+
+// API Caller
+// UI to show different cryptos
+// MVVM
+
+
+
 class CryptoViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    var array = [
-                "MCK",
-                "CKL",
-                "KLD"
+    private var viewModels = [CryptoTableViewCellViewModel]()
     
-    
-        ]
-
+    static let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.locale = .current
+        formatter.allowsFloats = true
+        formatter.numberStyle = .currency
+        formatter.formatterBehavior = .default
+        
+        return formatter
+    }()
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
-       
         view.backgroundColor = .yellow
         title = "fafafsfsa"
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        APICaller.shared.getAllCryptoData { [weak self] result in
+            switch result {
+            case .success(let models):
+                self?.viewModels = models.compactMap({
+                    
+                    // NumberFormatter
+                    let price = $0.price_usd ?? 0
+                    let formatter = CryptoViewController.numberFormatter
+                    let priceString = formatter.string(from: NSNumber(value: price))
+                    
+                 return CryptoTableViewCellViewModel(
+                 name: $0.name ?? "N/A",
+                 symbol: $0.asset_id,
+                 price: priceString ?? ""
+                    )
+                })
+                
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            case .failure(let error):
+                print("ERROR : \(error)")
+            }
+        }
+       
+        
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Back",
                                                             style: .plain,
@@ -57,15 +97,19 @@ extension CryptoViewController : UITableViewDelegate {
 extension CryptoViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        array.count
+        viewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cryptoCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cryptoCell", for: indexPath) as! CryptoTableViewCell
         
-        cell.textLabel?.text = array[indexPath.row]
+        cell.configure(with: viewModels[indexPath.row])
         return cell
     }
     
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 64
+    }
 }
 
