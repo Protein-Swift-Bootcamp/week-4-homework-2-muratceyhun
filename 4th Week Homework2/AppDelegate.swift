@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 
-//        APICaller.shared.getAllIcons()
+        APICaller.shared.getAllIcons()
 
 
 

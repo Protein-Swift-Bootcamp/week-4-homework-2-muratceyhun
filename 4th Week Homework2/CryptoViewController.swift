@@ -34,7 +34,7 @@ class CryptoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .yellow
+        view.backgroundColor = .black
         title = "fafafsfsa"
         
         tableView.delegate = self
@@ -43,17 +43,22 @@ class CryptoViewController: UIViewController {
         APICaller.shared.getAllCryptoData { [weak self] result in
             switch result {
             case .success(let models):
-                self?.viewModels = models.compactMap({
+                self?.viewModels = models.compactMap({ model in
                     
                     // NumberFormatter
-                    let price = $0.price_usd ?? 0
+                    let price = model.price_usd ?? 0
                     let formatter = CryptoViewController.numberFormatter
                     let priceString = formatter.string(from: NSNumber(value: price))
                     
+                    let iconUrl = URL(string: APICaller.shared.icons.filter ({ icon in
+                        icon.asset_id == model.asset_id
+                    }).first?.url ?? "")
+                    
                  return CryptoTableViewCellViewModel(
-                 name: $0.name ?? "N/A",
-                 symbol: $0.asset_id,
-                 price: priceString ?? ""
+                 name: model.name ?? "N/A",
+                 symbol: model.asset_id,
+                 price: priceString ?? "N/A",
+                 iconUrl: iconUrl
                     )
                 })
                 
