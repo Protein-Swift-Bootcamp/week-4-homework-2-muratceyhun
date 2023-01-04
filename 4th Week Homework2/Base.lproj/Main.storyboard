@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nu0-VD-zXT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EJZ-31-QuL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -29,7 +29,7 @@
                                         <rect key="frame" x="0.0" y="308" width="374" height="52.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9t-ih-boh">
-                                                <rect key="frame" x="0.0" y="0.0" width="151.5" height="52.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="52.5"/>
                                                 <color key="backgroundColor" red="1" green="0.72232198110000001" blue="0.016189551890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Crypto">
@@ -42,22 +42,6 @@
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="cryptoButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cek-Ys-aer"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grT-2w-bwg">
-                                                <rect key="frame" x="222.5" y="0.0" width="151.5" height="52.5"/>
-                                                <color key="backgroundColor" red="1" green="0.72232198110000001" blue="0.016189551890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Currency">
-                                                    <fontDescription key="titleFontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="28"/>
-                                                </buttonConfiguration>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="20"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="currencyButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A2U-Na-oAF"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -92,10 +76,15 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oMB-ah-xiH">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <activityIndicatorView key="tableHeaderView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" id="AQ3-69-vwd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cryptoCell" rowHeight="86" id="tsv-JW-l5h" customClass="CryptoTableViewCell" customModule="_th_Week_Homework2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="86"/>
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tsv-JW-l5h" id="AtO-z2-uky">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
@@ -131,9 +120,9 @@
                                                     </constraints>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 43000" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmc-3D-ALj">
-                                                    <rect key="frame" x="261" y="32.5" width="148" height="21"/>
+                                                    <rect key="frame" x="193" y="32.5" width="216" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="148" id="CWs-GM-Cjz"/>
+                                                        <constraint firstAttribute="width" constant="216" id="CWs-GM-Cjz"/>
                                                         <constraint firstAttribute="height" constant="21" id="qSP-j9-aqW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="22"/>
@@ -141,6 +130,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                             <constraints>
                                                 <constraint firstItem="kmc-3D-ALj" firstAttribute="centerY" secondItem="la0-q1-KKQ" secondAttribute="centerY" id="6qz-B0-NIq"/>
                                                 <constraint firstItem="kmc-3D-ALj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="la0-q1-KKQ" secondAttribute="trailing" constant="8" symbolic="YES" id="ETc-fg-kbt"/>
@@ -155,6 +145,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="kmc-3D-ALj" secondAttribute="trailing" constant="-15" id="zal-W2-wqb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                         <connections>
                                             <outlet property="imgIcon" destination="yCR-3W-3bC" id="Dkt-LC-TYT"/>
                                             <outlet property="nameLabel" destination="Bkl-HN-TTt" id="4Q8-CH-JL7"/>
@@ -166,7 +157,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g0C-uq-Scu"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="g0C-uq-Scu" firstAttribute="trailing" secondItem="oMB-ah-xiH" secondAttribute="trailing" id="Akv-eY-J1L"/>
                             <constraint firstItem="oMB-ah-xiH" firstAttribute="leading" secondItem="g0C-uq-Scu" secondAttribute="leading" id="GwC-so-B69"/>
@@ -176,28 +167,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="etE-y0-CcH"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="AQ3-69-vwd" id="9RR-46-TKD"/>
                         <outlet property="tableView" destination="oMB-ah-xiH" id="jRH-CA-6ip"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5D-Fm-yPl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2815.9420289855075" y="-211.60714285714286"/>
-        </scene>
-        <!--Currency View Controller-->
-        <scene sceneID="Yuc-Xl-9Hv">
-            <objects>
-                <viewController storyboardIdentifier="currencyVC" id="ZO6-Eh-hdQ" customClass="CurrencyViewController" customModule="_th_Week_Homework2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3cl-3g-pug">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="tpf-E6-C69"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="mMA-QR-Azm"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGn-QU-Y9D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2091" y="595"/>
+            <point key="canvasLocation" x="2077" y="76"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iO5-pO-ZeB">
@@ -234,14 +210,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M7g-yp-htI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2089.8550724637685" y="-195.53571428571428"/>
+            <point key="canvasLocation" x="1251" y="76"/>
         </scene>
     </scenes>
     <resources>
         <image name="firstIcon" width="512" height="512"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

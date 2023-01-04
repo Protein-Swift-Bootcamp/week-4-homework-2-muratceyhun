@@ -34,20 +34,7 @@ class MainViewController: UIViewController {
         
     }
     
-    
-    @IBAction func currencyButtonClicked(_ sender: Any) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "currencyVC") as! CurrencyViewController
-        destinationVC.modalTransitionStyle = .flipHorizontal
-        destinationVC.modalPresentationStyle = .fullScreen
-        self.present(destinationVC, animated: true, completion: nil)
-        
-        
-        
-        
-        
-    }
+
     
 
 

@@ -19,6 +19,8 @@ class CryptoViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     private var viewModels = [CryptoTableViewCellViewModel]()
     
     static let numberFormatter: NumberFormatter = {
@@ -33,9 +35,12 @@ class CryptoViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         
-        view.backgroundColor = .black
+        navigationController?.navigationBar.prefersLargeTitles = true
         title = "fafafsfsa"
+        
+        
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -65,26 +70,19 @@ class CryptoViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
+                    self!.activityIndicator.stopAnimating()
+
                 }
             case .failure(let error):
                 print("ERROR : \(error)")
             }
         }
        
-        
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Back",
-                                                            style: .plain,
-                                                            target: self,
-                                                            action: #selector(tap))
+      
         
     
 
     }
-    @objc func tap() {
-        print("rasfafsafs")
-    }
-    
 
 
 }
@@ -107,6 +105,7 @@ extension CryptoViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cryptoCell", for: indexPath) as! CryptoTableViewCell
+        
         
         cell.configure(with: viewModels[indexPath.row])
         return cell

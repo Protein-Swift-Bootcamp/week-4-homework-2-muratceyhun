@@ -14,7 +14,6 @@
 		434CE8FD2958493400BEA2D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434CE8FC2958493400BEA2D6 /* Assets.xcassets */; };
 		434CE9002958493400BEA2D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434CE8FE2958493400BEA2D6 /* LaunchScreen.storyboard */; };
 		439BC60E29585CFA007E10E0 /* CryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BC60D29585CFA007E10E0 /* CryptoViewController.swift */; };
-		439BC61029585D03007E10E0 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439BC60F29585D03007E10E0 /* CurrencyViewController.swift */; };
 		43EFACE2295A1C23003EAFC0 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFACE1295A1C23003EAFC0 /* APICaller.swift */; };
 		43EFACE4295A1F31003EAFC0 /* CryptoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFACE3295A1F31003EAFC0 /* CryptoTableViewCell.swift */; };
 		43EFACE6295A23EB003EAFC0 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EFACE5295A23EB003EAFC0 /* Models.swift */; };
@@ -30,7 +29,6 @@
 		434CE8FF2958493400BEA2D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		434CE9012958493400BEA2D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		439BC60D29585CFA007E10E0 /* CryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoViewController.swift; sourceTree = "<group>"; };
-		439BC60F29585D03007E10E0 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 		43EFACE1295A1C23003EAFC0 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		43EFACE3295A1F31003EAFC0 /* CryptoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTableViewCell.swift; sourceTree = "<group>"; };
 		43EFACE5295A23EB003EAFC0 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 				434CE8F72958493400BEA2D6 /* MainViewController.swift */,
 				439BC60D29585CFA007E10E0 /* CryptoViewController.swift */,
 				43EFACE3295A1F31003EAFC0 /* CryptoTableViewCell.swift */,
-				439BC60F29585D03007E10E0 /* CurrencyViewController.swift */,
 				43EFACE1295A1C23003EAFC0 /* APICaller.swift */,
 				43EFACE5295A23EB003EAFC0 /* Models.swift */,
 				434CE8F92958493400BEA2D6 /* Main.storyboard */,
@@ -159,7 +156,6 @@
 				43EFACE6295A23EB003EAFC0 /* Models.swift in Sources */,
 				434CE8F42958493400BEA2D6 /* AppDelegate.swift in Sources */,
 				434CE8F62958493400BEA2D6 /* SceneDelegate.swift in Sources */,
-				439BC61029585D03007E10E0 /* CurrencyViewController.swift in Sources */,
 				43EFACE4295A1F31003EAFC0 /* CryptoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
