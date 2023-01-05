@@ -57,7 +57,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Z4z-Y7-44B" secondAttribute="trailing" constant="20" id="mD3-w8-j0r"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="YBv-Uk-vzi"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="YBv-Uk-vzi"/>
                     <connections>
                         <outlet property="imageVİew" destination="qki-uG-4Kt" id="TDY-48-UnG"/>
                     </connections>
@@ -165,7 +165,7 @@
                             <constraint firstItem="oMB-ah-xiH" firstAttribute="top" secondItem="g0C-uq-Scu" secondAttribute="top" id="RNx-j5-rHz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="etE-y0-CcH"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="etE-y0-CcH"/>
                     <connections>
                         <outlet property="activityIndicator" destination="AQ3-69-vwd" id="9RR-46-TKD"/>
                         <outlet property="tableView" destination="oMB-ah-xiH" id="jRH-CA-6ip"/>
@@ -193,14 +193,14 @@
             </objects>
             <point key="canvasLocation" x="-590" y="76"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Crypto-->
         <scene sceneID="N0E-sc-S65">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qtt-Sn-ynf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="cryptoNavID" automaticallyAdjustsScrollViewInsets="NO" id="Qtt-Sn-ynf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="a0j-C8-kDK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vV5-pt-YlR">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationItem key="navigationItem" title="Crypto" largeTitleDisplayMode="always" id="a0j-C8-kDK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="vV5-pt-YlR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

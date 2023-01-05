@@ -18,25 +18,18 @@ class MainViewController: UIViewController {
         title = "Welcome to Trade World"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemIndigo
-        
-
     }
     
     
     @IBAction func cryptoButtonClicked(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "cryptoVC") as! CryptoViewController
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "cryptoNavID") as! UINavigationController
+
         destinationVC.modalPresentationStyle = .fullScreen
         destinationVC.modalTransitionStyle = .flipHorizontal
         self.present(destinationVC, animated: true, completion: nil)
-        
-        
+     
     }
-    
-
-    
-
-
 }
 

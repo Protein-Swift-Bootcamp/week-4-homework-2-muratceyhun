@@ -7,20 +7,10 @@
 
 import UIKit
 
-
-
-// API Caller
-// UI to show different cryptos
-// MVVM
-
-
-
 class CryptoViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-    
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    
     private var viewModels = [CryptoTableViewCellViewModel]()
     
     static let numberFormatter: NumberFormatter = {
@@ -32,16 +22,13 @@ class CryptoViewController: UIViewController {
         
         return formatter
     }()
-  
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+
+            title = "Crypto"
         activityIndicator.startAnimating()
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = "fafafsfsa"
-        
-        
-        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -65,8 +52,7 @@ class CryptoViewController: UIViewController {
                  price: priceString ?? "N/A",
                  iconUrl: iconUrl
                     )
-                })
-                
+                }).filter {$0.iconUrl != nil}
                 
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
@@ -77,40 +63,29 @@ class CryptoViewController: UIViewController {
                 print("ERROR : \(error)")
             }
         }
-       
-      
-        
-    
-
+  
     }
-
-
 }
 
-
+//MARK: -UITableViewDelegate
 
 extension CryptoViewController : UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
-    
 }
 
+//MARK: -UITableViewDataSource
 
 extension CryptoViewController : UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModels.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cryptoCell", for: indexPath) as! CryptoTableViewCell
-        
         
         cell.configure(with: viewModels[indexPath.row])
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 64
